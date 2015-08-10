@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="stylesheets/main.css" rel="stylesheet" />
+  <title>Chime</title>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/javascript/markdown-hints.js"></script>
+
+  <!--[if !IE]><!-->
+  <script src="/javascript/undo.js"></script>
+  <script src="/javascript/markdown-bar.js"></script>
+  <script src="javascript/marked/lib/marked.js"></script>
+  <script src="javascript/markdown-previewer.js"></script>
+  <!--<![endif]-->
+</head>
+<body class="{% block body_class %}{% endblock %} col">
+
+  <div class="global-header  row">
+    <div class="row__left">
+      <a href="sign-in.html" class="global-header__title">Chime</a>
+      <nav class="breadcrumb">
+        <a href="browse.html" class="breadcrumb__item is-selected">Content</a>
+        <a href="activities-list.html" class="breadcrumb__item">Activities</a>
+        <a href="#" class="breadcrumb__item">Analytics</a>
+        <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+      </nav>
+    </div>
+    <nav class="global-header__nav  row__right  toolbar--right">
+      
+     
+      <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+    </nav>
+  </div>
+  <form action="{{ save_path }}" method="POST" class="row col__flex col edit-article__form">
+
+    <input name="layout" value="{{ front['layout'] }}" type="hidden" />
+    <input name="hexsha" value="{{ hexsha }}" type="hidden" />
+    <input name="url-slug" type="hidden" value="{{ url_slug }}" />
+    <input name="order" type="hidden" value="{{ front['order'] }}" />
+
+    <input name="{{ iso }}-description" type="hidden" value="{{ form_description }}" />
+
+    <div class="edit-article__header row">
+      <div class="row__left">
+        <div class="selection-box">
+          <label>Article Title</label>
+          <input name="{{ iso }}-title" value="Snowstorm Operations" type="text" class="edit-article__title">
+        </div>
+      </div>
+      <div class="row__right toolbar--right">
+        <a type="submit" class="button button--orange toolbar__item" href="activity-new.html">Request feedback</a>
+        <a href="{{ view_path }}" target="_blank" class="button  toolbar__item">Preview site</a>
+        <input type="submit" class="button toolbar__item" value="Save progress"/>
+      </div>
+    </div>    
+    <div class="edit-article__main row col__flex">
+      <div class="edit-article__editor row__left col">
+        <!--[if !IE]><!-->
+        <div class="markdown-bar row toolbar toolbar--left"></div>
+        <!--<![endif]-->
+        <textarea id="{{ iso }}-body" class="col__flex markdown-textarea" name="{{iso}}-body" type="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus sed incidunt laboriosam nobis aperiam, mollitia. Consectetur, neque aperiam mollitia repellat modi minima, inventore facilis laborum magnam voluptates harum, ad sit.</textarea>
+      </div>
+      <div class="edit-article__previewer row__right col">
+        <div class="previewer__bar col__item">
+          <div class="toolbar toolbar--left toolbar--tabs">
+            <a href="#" class="button toolbar__item" id="toggle-preview">Live Preview</a>
+            <a href="#" class="button toolbar__item" id="toggle-hints">Markdown Hints</a>
+          </div>
+        </div>
+        <div class="col__flex previewer__content is-hidden">
+          <div class="previewer__iframe-container">
+            <iframe src="/markdown-previewer/markdown-preview.html" class="markdown-previewer"></iframe>
+          </div>
+        </div>
+        <div class="col__flex previewer__hints">
+          <table class="hint-table">
+            <thead>
+              <tr>
+                <th>Formatting Syntax</th>
+                <th>Output</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hint">
+                <td class="hint__code">**bold text**</td>
+                <td class="hint__preview"><b>bold text</b></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">_italic text_</td>
+                <td class="hint__preview"><i>italic text</i></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">[link text](url)</td>
+                <td class="hint__preview"><a href="#">link text</a></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code"># Level 1 Heading</td>
+                <td class="hint__preview"><h1>Level 1 Heading</h1></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">## Level 2 Heading</td>
+                <td class="hint__preview"><h2>Level 2 Heading</h2></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">### Level 3 Heading</td>
+                <td class="hint__preview"><h3>Level 3 Heading</h3></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">
+                  <p>- bulleted list item</p>
+                  <p>- bulleted list item</p>
+                  <p>- bulleted list item</p>
+                </td>
+                <td class="hint__preview">
+                  <ul>
+                    <li>bulleted list item</li>
+                    <li>bulleted list item</li>
+                    <li>bulleted list item</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">
+                  <p>1. numbered list item</p>
+                  <p>1. numbered list item</p>
+                  <p>1. numbered list item</p>
+                </td>
+                <td class="hint__preview">
+                  <ol>
+                    <li>numbered list item</li>
+                    <li>numbered list item</li>
+                    <li>numbered list item</li>
+                  </ol>
+                </td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">> blockquote text</td>
+                <td class="hint__preview">
+                  <blockquote>Blockquote Text</blockquote>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="edit-article__footer row">
+      <div class="translations row__left toolbar--left toolbar--tabs">
+        <span class="toolbar__label">Translations: </span>
+        <a href="#" id="{{ iso }}-nav" class="button toolbar__item is-selected" onclick="return show{{ lang }}Form()">English</a>
+        <a href="#" id="{{ iso }}-nav" class="button toolbar__item" onclick="return show{{ lang }}Form()">Spanish</a>
+        <a href="#" id="{{ iso }}-nav" class="button toolbar__item" onclick="return show{{ lang }}Form()">Chinese</a>
+      </div>
+      <div class="statistics row__right toolbar--right">
+        <span class="toolbar__item">This week, <b>15 people</b> spent an average of <b>34 secs</b> on this page.</span>
+      </div>
+    </div>
+  </form>
+</body>
+</html>

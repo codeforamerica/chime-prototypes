@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="stylesheets/main.css" rel="stylesheet" />
+  <title>Chime</title>
+</head>
+<body class="{% block body_class %}{% endblock %} col">
+
+  <div class="global-header  row">
+    <div class="row__left">
+      <a href="sign-in.html" class="global-header__title">Chime</a>
+      <nav class="breadcrumb">
+        <a href="browse.html" class="breadcrumb__item is-selected">Content</a>
+        <a href="activities-list.html" class="breadcrumb__item">Activities</a>
+        <a href="#" class="breadcrumb__item">Analytics</a>
+         <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+      </nav>
+    </div>
+    <nav class="global-header__nav  row__right  toolbar--right">
+          <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+        </nav>
+      </div>
+
+      <div class="activity-overview__container col__flex">
+        <div class="activity-overview__main">
+          <ul class="activity-progress grid row">
+
+            <li class="activity-progress__item is-completed grid__item width-one-fourth">
+              <div class="activity-progress__icon fa fa-pencil"></div>
+              <p class="activity-progress__label">Edits Made</p>
+            </li>
+            <li class="activity-progress__item grid__item width-one-fourth">
+              <div class="activity-progress__icon fa fa-eye"></div>
+              <p class="activity-progress__label">Feedback Requested</p>
+            </li>
+            <li class="activity-progress__item grid__item width-one-fourth">
+              <div class="activity-progress__icon fa fa-thumbs-o-up"></div>
+              <p class="activity-progress__label">Edits Endorsed</p>
+            </li>
+            <li class="activity-progress__item grid__item width-one-fourth end-row">
+              <div class="activity-progress__icon fa fa-check"></div>
+              <p class="activity-progress__label">Published</p>
+            </li>
+          </ul>
+          <div class="row">
+            <h1 class="activity-overview__title">Get feedback on your work in order to publish it.</h1>
+            <form action="." method="POST" class="comment comment--new">
+              <div class="comment__body">
+                <label>Describe the purpose of your changes as a user need</label>
+                <input type="text" placeholder="e.g., updating the permitting process for business owners">
+                <br/>
+                <textarea class="comment__input" name="comment_text" placeholder="Leave a useful comment about what you've done."></textarea>
+              </div>
+              <div class="comment__actions toolbar toolbar--right">
+                <a href="activities-list.html" class="toolbar__item button button--medium button--orange" type="submit" name="comment">Request Feedback</a>
+              </div>
+            </form>
+
+           
+          </div>
+
+          
+        </div>
+      </div>
+
+    </body>
+    </html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="stylesheets/main.css" rel="stylesheet" />
+  <title>Chime</title>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/javascript/markdown-hints.js"></script>
+
+  <!--[if !IE]><!-->
+  <script src="/javascript/undo.js"></script>
+  <script src="/javascript/markdown-bar.js"></script>
+  <script src="javascript/marked/lib/marked.js"></script>
+  <script src="javascript/markdown-previewer.js"></script>
+  <!--<![endif]-->
+
+  <script src="/javascript/prototype.js"></script>
+</head>
+<body class="{% block body_class %}{% endblock %} col">
+
+  <div class="global-header  row">
+    <div class="row__left">
+      <a href="sign-in.html" class="global-header__title">Chime</a>
+      <nav class="breadcrumb">
+        <a href="browse.html" class="breadcrumb__item is-selected">Content</a>
+        <a href="activity.html" class="breadcrumb__item">Activity</a>
+        <a href="#" class="breadcrumb__item">Analytics</a>
+        <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+      </nav>
+    </div>
+    <nav class="global-header__nav  row__right  toolbar--right">
+
+
+      <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+    </nav>
+  </div>
+  <form action="{{ save_path }}" method="POST" class="row col__flex col edit-article__form">
+
+    <input name="layout" value="{{ front['layout'] }}" type="hidden" />
+    <input name="hexsha" value="{{ hexsha }}" type="hidden" />
+    <input name="url-slug" type="hidden" value="{{ url_slug }}" />
+    <input name="order" type="hidden" value="{{ front['order'] }}" />
+
+    <input name="{{ iso }}-description" type="hidden" value="{{ form_description }}" />
+
+    <div class="edit-article__header row">
+      <div class="row__left">
+        <div class="selection-box">
+          <label>Article Title</label>
+          <input name="{{ iso }}-title" value="Snowstorm Operations" type="text" class="edit-article__title">
+        </div>
+      </div>
+      <div class="row__right toolbar--right">
+        <input type="submit" id="save" class="button button--medium button--green toolbar__item is-hidden" value="Save progress"/>
+        <a id="request" class="button button--medium button--orange toolbar__item is-hidden" href="activity-new.html">Request feedback</a>
+        <a id="awaiting" class="button button--medium toolbar__item is-hidden" href="activity-new.html">Awaiting feedback</a>
+        <a id="endorse" class="button button--medium button--green toolbar__item is-hidden" href="activity-new.html">Endorse edits</a>
+        <a id="publish" class="button button--medium button--blue toolbar__item is-hidden" href="activity-new.html">Publish to site</a>
+      </div>
+    </div>    
+    <div class="edit-article__main row col__flex">
+      <div class="edit-article__editor row__left col">
+        <!--[if !IE]><!-->
+        <div class="markdown-bar row toolbar toolbar--left"></div>
+        <!--<![endif]-->
+        <textarea id="editor" class="col__flex markdown-textarea" name="{{iso}}-body" type="text"># Roadways
+
+During a winter storm, snow and ice are first cleared from highways, snow emergency streets, bus lanes, and other primary routes. Then all other roadways are plowed. You can make a complaint whenever roads are snowy or icy. When a storm operation is underway, these complaints are used to monitor the storm and there is no response to individual plowing or spreading requests. After the storm operation ends, individual complaints will receive a response.
+
+# Sidewalks
+
+Property owners must clear snow from their sidewalks. After owners have had an appropriate amount of time to shovel, you can make a complaint about snow or ice on sidewalks.</textarea>
+      </div>
+      <div class="edit-article__previewer row__right col">
+        <div class="previewer__bar col__item">
+          <div class="toolbar toolbar--left toolbar--tabs">
+            <a href="#" class="button toolbar__item is-selected" id="toggle-preview">Live Preview</a>
+            <a href="activity-overview.html" target="_blank" class="button  toolbar__item" id="toggle-history">History</a>
+            <a href="#" class="button toolbar__item" id="toggle-hints">Markdown Hints</a>
+          </div>
+        </div>
+        <div class="col__flex previewer__content is-hidden">
+          <div class="previewer__iframe-container">
+            <iframe src="/markdown-previewer/markdown-preview.html" class="markdown-previewer"></iframe>
+          </div>
+        </div>
+        <div class="col__flex previewer__history activity-overview__container is-hidden">
+          <div class="activity-overview__main">
+
+            <ul class="activity-progress grid row">
+              <li class="activity-progress__item is-completed grid__item width-one-fourth">
+                <div class="activity-progress__icon fa fa-pencil"></div>
+                <p class="activity-progress__label">Edits Made</p>
+              </li>
+              <li class="activity-progress__item is-completed grid__item width-one-fourth">
+                <div class="activity-progress__icon fa fa-eye"></div>
+                <p class="activity-progress__label">Feedback Requested</p>
+              </li>
+              <li class="activity-progress__item grid__item width-one-fourth">
+                <div class="activity-progress__icon fa fa-thumbs-o-up"></div>
+                <p class="activity-progress__label">Edits Endorsed</p>
+              </li>
+              <li class="activity-progress__item grid__item width-one-fourth end-row">
+                <div class="activity-progress__icon fa fa-check"></div>
+                <p class="activity-progress__label">Published</p>
+              </li>
+            </ul>
+
+            <div class="activity-log row">
+
+              <div class="activity-log-item activity-log-item--info">
+                <div class="activity-log-item__content">
+                  <p class="text-{% if log_item.commit_action == 'feedback requested' %}orange{% elif log_item.commit_action == 'edits endorsed' %}green{% else %}blue{% endif %}">norris@codeforamerica.org created this page.</p>
+                  <div class="activity-log-item__datetime">2 days ago</div>
+                </div>
+              </div>
+              <div class="activity-log-item activity-log-item--info">
+                <div class="activity-log-item__content">
+                  <p class="text-orange">norris@codeforamerica.org requested feedback on this page.</p>
+                  <div class="activity-log-item__datetime">2 days ago</div>
+                </div>
+              </div>
+
+              <div class="activity-log-item activity-log-item--comment">
+                <div class="comment">
+                  <div class="comment__author">norris@codeforamerica.org</div>
+                  <div class="comment__body">Made some updates to this based on the new snowstorm operations we just rolled out. @tomas, do you mind looking at this?</div>
+                  <div class="comment__datetime">2 days ago</div>
+                </div>              
+              </div>
+
+              <div class="activity-log-item activity-log-item--comment">
+                <div class="comment comment--new">
+                  <form action="." method="POST">
+                    <div class="comment__author">norris@codeforamerica.org</div>
+                    <div class="comment__body">
+                      <textarea class="comment__input" name="comment_text" placeholder="Leave a useful comment about what you've done."></textarea>
+                    </div>
+                    <div class="comment__actions toolbar toolbar--right">
+                      <input class="toolbar__item button button--medium " type="submit" name="comment" value="Leave a Comment">
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col__flex previewer__hints">
+          <table class="hint-table">
+            <thead>
+              <tr>
+                <th>Formatting Syntax</th>
+                <th>Output</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hint">
+                <td class="hint__code">**bold text**</td>
+                <td class="hint__preview"><b>bold text</b></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">_italic text_</td>
+                <td class="hint__preview"><i>italic text</i></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">[link text](url)</td>
+                <td class="hint__preview"><a href="#">link text</a></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code"># Level 1 Heading</td>
+                <td class="hint__preview"><h1>Level 1 Heading</h1></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">## Level 2 Heading</td>
+                <td class="hint__preview"><h2>Level 2 Heading</h2></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">### Level 3 Heading</td>
+                <td class="hint__preview"><h3>Level 3 Heading</h3></td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">
+                  <p>- bulleted list item</p>
+                  <p>- bulleted list item</p>
+                  <p>- bulleted list item</p>
+                </td>
+                <td class="hint__preview">
+                  <ul>
+                    <li>bulleted list item</li>
+                    <li>bulleted list item</li>
+                    <li>bulleted list item</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">
+                  <p>1. numbered list item</p>
+                  <p>1. numbered list item</p>
+                  <p>1. numbered list item</p>
+                </td>
+                <td class="hint__preview">
+                  <ol>
+                    <li>numbered list item</li>
+                    <li>numbered list item</li>
+                    <li>numbered list item</li>
+                  </ol>
+                </td>
+              </tr>
+              <tr class="hint">
+                <td class="hint__code">> blockquote text</td>
+                <td class="hint__preview">
+                  <blockquote>Blockquote Text</blockquote>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="edit-article__footer row">
+      <div class="translations row__left toolbar--left toolbar--tabs">
+        <span class="toolbar__label">Translations: </span>
+        <a href="#" id="{{ iso }}-nav" class="button toolbar__item is-selected" onclick="return show{{ lang }}Form()">English</a>
+        <a href="#" id="{{ iso }}-nav" class="button toolbar__item" onclick="return show{{ lang }}Form()">Spanish</a>
+        <a href="#" id="{{ iso }}-nav" class="button toolbar__item" onclick="return show{{ lang }}Form()">Chinese</a>
+      </div>
+      <div class="statistics row__right toolbar--right">
+        <span class="toolbar__item">This week, <b>15 people</b> spent an average of <b>34 secs</b> on this page.</span>
+      </div>
+    </div>
+  </form>
+
+  <div class="modal-container" id="request-modal">
+    <div class="modal">
+      <h2 class="activity-overview__title">Have someone look at your work before you publish.</h2>
+      <form action="">
+        <label for="">Let them know what you did and why.</label>
+        <textarea class="comment__input" name="comment_text" placeholder="Made some updates to this based on the new snowstorm operations we just rolled out."></textarea>
+        <label for="">Ask someone to look over your work. We'll let them know by email.</label>
+        <input type="text" placeholder="tomas@codeforamerica.org">
+      </form>
+      <br/>
+      <div class="row">
+        <div class="comment__actions toolbar toolbar--left row__left">
+          <a href="#" class="text-red">Override feedback process</a>
+        </div>
+        <div class="comment__actions toolbar toolbar--right row__right">
+          <a href="#" class="toolbar__item button button--medium" type="submit" name="comment">Cancel</a>
+          <a href="#" id="request-confirm" class="toolbar__item button button--medium button--orange" type="submit" name="comment">Request Feedback</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

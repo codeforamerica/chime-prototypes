@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="stylesheets/main.css" rel="stylesheet" />
+  <title>Chime</title>
+</head>
+<body class="{% block body_class %}{% endblock %} col">
+
+  <div class="global-header  row">
+    <div class="row__left">
+      <a href="sign-in.html" class="global-header__title">Chime</a>
+      <nav class="breadcrumb">
+        <a href="browse.html" class="breadcrumb__item">Content</a>
+        <a href="activities-list.html" class="breadcrumb__item is-selected">Activities</a>
+        <a href="#" class="breadcrumb__item">Analytics</a>
+         <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+      </nav>
+    </div>
+    <nav class="global-header__nav  row__right  toolbar--right">
+      <div class="dropdown activity-dropdown toolbar__item global-header__link">
+        <a href="/tree/{{ branch }}" class="dropdown__label activity-dropdown__link">Updating the permitting process (editing) </a>
+        <div class="dropdown__popup dropdown__popup--right">
+          <p class="activity-dropdown__subtitle">Current Activity</p>
+          <h2 class="activity-dropdown__title">Updating the permitting process for business owners</h2>
+          <a class="button button--large activity-dropdown__button" href="activity-overview.html">See full history and discussion</a>
+          <form action="{{ activity.overview_path }}" method="POST" class="comment comment--new">
+            <div class="comment__author">norris@codeforamerica.org</div>
+            <div class="comment__body">
+              <textarea class="comment__input" name="comment_text" placeholder="Leave your comment here (optional)"></textarea>
+            </div>
+            <div class="comment__actions toolbar toolbar--right">
+              <input class="toolbar__item button button--orange" type="submit" name="request_feedback" value="Request Feedback">
+<!--              <input class="toolbar__item button button--green" type="submit" name="endorse_edits" value="Looks Good!">
+                  <input class="toolbar__item button button--blue" type="submit" name="merge" value="Publish">
+                  <input class="toolbar__item button button" type="submit" name="comment" value="Comment"> -->
+                </div>
+              </form>
+            </div>
+          </div>
+           
+          <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+        </nav>
+      </div>
+
+      <div class="activity-overview__container">
+        <div class="activity-overview__main">
+          <div class="activity-overview__header row">
+            <p class="activity-overview__subtitle">Activity Overview</p>
+            <h1 class="activity-overview__title">Updating the permitting process for business owners</h1>
+            <p class="activity-overview__details">Last edited by norrishung@codeforamerica.org.</p>
+          </div>
+
+          <ul class="activity-progress grid row">
+
+            <li class="activity-progress__item is-completed grid__item width-one-fourth">
+              <div class="activity-progress__icon fa fa-pencil"></div>
+              <p class="activity-progress__label">Edits Made</p>
+            </li>
+            <li class="activity-progress__item is-completed grid__item width-one-fourth">
+              <div class="activity-progress__icon fa fa-eye"></div>
+              <p class="activity-progress__label">Feedback Requested</p>
+            </li>
+            <li class="activity-progress__item grid__item width-one-fourth">
+              <div class="activity-progress__icon fa fa-thumbs-o-up"></div>
+              <p class="activity-progress__label">Edits Endorsed</p>
+            </li>
+            <li class="activity-progress__item grid__item width-one-fourth end-row">
+              <div class="activity-progress__icon fa fa-check"></div>
+              <p class="activity-progress__label">Published</p>
+            </li>
+          </ul>
+          <div class="activity-summary row">
+            <h3 class="activity-summary__title">1 file has been changed</h3>
+            <table class="activity-summary__table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Changes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="activity-summary__name"><a href="{{ change.edit_path }}">Snowstorm Operations</a></td>
+                  <td class="activity-summary__filetype">Article</td>
+                  <td class="activity-summary__changes">Edited</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="activity-log row">
+
+            <p class="activity-overview__description"><a href="{{ activity.edit_path }}">Do more work on this activity</a> or leave a comment. Currently awaiting someone to look over your work.</p>
+
+            <div class="activity-log-item activity-log-item--comment">
+              <form action="." method="POST" class="comment comment--new">
+                <div class="comment__author">norris@codeforamerica.org</div>
+                <div class="comment__body">
+                  <textarea class="comment__input" name="comment_text" placeholder="Leave a useful comment about what you've done."></textarea>
+                </div>
+                <div class="comment__actions toolbar toolbar--right">
+                  <input class="toolbar__item button button--medium " type="submit" name="comment" value="Leave a Comment">
+                </div>
+              </form>
+            </div>
+            <div class="activity-log-item activity-log-item--info">
+              <div class="activity-log-item__content">
+                <p class="text-orange">norris@codeforamerica.org requested feedback on this activity.</p>
+                <div class="activity-log-item__datetime">2 days ago</div>
+              </div>
+            </div>
+            <div class="activity-log-item activity-log-item--info">
+              <div class="activity-log-item__content">
+                <p class="text-{% if log_item.commit_action == 'feedback requested' %}orange{% elif log_item.commit_action == 'edits endorsed' %}green{% else %}blue{% endif %}">tomas@codeforamerica.org created this activity.</p>
+                <div class="activity-log-item__datetime">2 days ago</div>
+              </div>
+            </div>
+            <div class="activity-log-item activity-log-item--comment">
+              <div class="comment">
+                <div class="comment__author">tomas@codeforamerica.org</div>
+                <div class="comment__body">Snowstorm operations article is out of date and needs to reflect our current protocol. Can you look into this Norris?</div>
+                <div class="comment__datetime">2 days ago</div>
+              </div>              
+            </div>
+            <div class="activity-log-item activity-log-item--info">
+              <div class="activity-log-item__content">
+                <p class="">tomas@codeforamerica.org created this activity.</p>
+                <div class="activity-log-item__datetime">2 days ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </body>
+    </html>
