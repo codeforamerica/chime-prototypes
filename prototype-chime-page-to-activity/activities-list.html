@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+        <link href="stylesheets/main.css" rel="stylesheet" />
+        <title>Chime</title>
+    </head>
+    <body class="{% block body_class %}{% endblock %} col">
+
+      <div class="global-header  row">
+        <div class="row__left">
+          <a href="sign-in.html" class="global-header__title">Chime</a>
+          <nav class="breadcrumb">
+              <a href="browse.html" class="breadcrumb__item">Content</a>
+              <a href="activities-list.html" class="breadcrumb__item is-selected">Activities</a>
+              <a href="#" class="breadcrumb__item">Analytics</a>
+               <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+          </nav>
+        </div>
+        <nav class="global-header__nav  row__right  toolbar--right">
+            <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+        </nav>
+      </div>
+
+      <div class="activities-list__main row row--main grid col__flex">
+        <div class="current-tasks grid__item width-two-thirds">
+          <h2 class="current-tasks__title">Current Activities</h2>
+            <p class="current-tasks__description">Work that's already underway by you and your colleagues.</p>
+            <ul class="current-tasks__list">
+             <li class="current-task">
+              <p class="current-task__title"><a href="activity-overview.html">Updating the permitting process for business owners</a></p>
+              <div class="current-task__details row">
+                <p class="current-task__author row__left">Last edited by norris@codeforamerica.org</p>
+                <div class="current-task__actions row__right toolbar--right">
+                    <a href="activity-overview.html" class="button button--status button--status--requested">requested</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="new-task grid__item width-one-third end-row">
+            <form action="/start" method="POST" class="new-task__form">
+              <h2 class="new-task__title">Start a new activity</h2>
+              <p class="new-task__description">Describe the new activity in terms of a user need.</p>
+              <textarea name="task_description" style="height: 80px;" type="text" class="need" placeholder="I am clarifying the permitting process for business owners"></textarea>
+              <p><button type="submit" class="create button button--green">Let's go!</button></p>
+            </form>  
+          </div>
+      </div>
+    </body>
+</html>

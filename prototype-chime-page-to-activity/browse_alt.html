@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="stylesheets/main.css" rel="stylesheet" />
+  <title>Chime</title>
+</head>
+<body class="{% block body_class %}{% endblock %} col">
+
+  <div class="global-header  row">
+    <div class="row__left">
+      <a href="sign-in.html" class="global-header__title">Chime</a>
+      <nav class="breadcrumb">
+        <a href="browse.html" class="breadcrumb__item is-selected">Content</a>
+        <a href="activities-list.html" class="breadcrumb__item">Activities</a>
+        <a href="#" class="breadcrumb__item">Analytics</a>
+        <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+      </nav>
+    </div>
+    <nav class="global-header__nav  row__right  toolbar--right">
+      
+      <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+    </nav>
+  </div>
+  <div class="articles-list__header row row--main">
+    <ul class="nav-page-type toolbar toolbar--left row__left">
+      <li class="nav-page-type__link toolbar__item">Homepage</li>
+      <li class="nav-page-type__link toolbar__item is-selected">Articles</li>
+      <li class="nav-page-type__link toolbar__item">Project Pages</li>
+      <li class="nav-page-type__link toolbar__item">Department Pages</li>
+      <li class="nav-page-type__link toolbar__item">Press Releases</li>
+      <li class="nav-page-type__link toolbar__item">Job Postings</li>
+      <li class="nav-page-type__link toolbar__item">Events</li>
+    </ul>
+  </div>
+
+  <div class="row col__flex browse-alt">
+    <h1>Articles</h1>
+    <div class="row browse-alt__filters">
+      <div class="toolbar toolbar--left row__left">
+        <a href="" class="button button--medium button--green">Create a new article</a>
+      </div>
+      <div class=" toolbar toolbar--right row__right">
+        <label for="" class="toolbar__label">Filter by:</label>
+        <select class="toolbar__item" name="Categories" id="">
+          <option value="">All Categories</option>
+          <option value="">Births, deaths, marraiges, and care</option>
+        </select>
+        <select class="toolbar__item" name="Categories" id="">
+          <option value="">All Subcategories</option>
+          <option value="">eCertificates, register offices, changes of name and gender</option>
+        </select>
+      </div>
+    </div>
+
+    <table class="articles-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Subcategory</th>
+          <th>Views this week</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="#">Adding a father's name to a birth certificate</a></td>
+          <td>Births, deaths, marraiges, and care</td>
+          <td>eCertificates, register offices, changes of name and gender</td>
+          <td>25 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Adoption Record</a></td>
+          <td>Births, deaths, marraiges, and care</td>
+          <td>eCertificates, register offices, changes of name and gender</td>
+          <td>15 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Become a lorry or bus driver</a></td>
+          <td>Driving and Transport</td>
+          <td>Drivers of lorries, buses and goods vehicles</td>
+          <td>150 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Become a MOT tester</a></td>
+          <td>Driving and Transport</td>
+          <td>Driving and transport businesses</td>
+          <td>4 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Deposit protection schemes and landlords</a></td>
+          <td>Births, deaths, marraiges, and care</td>
+          <td>Being a landlord and renting out a room</td>
+          <td>25 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Park (mobile) homes</a></td>
+          <td>Births, deaths, marraiges, and care</td>
+          <td>Being a landlord and renting out a room</td>
+          <td>15 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Rent a room in your home</a></td>
+          <td>Housing and local services</td>
+          <td>Drivers of lorries, buses and goods vehicles</td>
+          <td>150 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Evicting tenants</a></td>
+          <td>Housing and local services</td>
+          <td>Driving and transport businesses</td>
+          <td>4 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Adding a father's name to a birth certificate</a></td>
+          <td>Births, deaths, marraiges, and care</td>
+          <td>eCertificates, register offices, changes of name and gender</td>
+          <td>25 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Adoption Record</a></td>
+          <td>Births, deaths, marraiges, and care</td>
+          <td>eCertificates, register offices, changes of name and gender</td>
+          <td>15 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Become a lorry or bus driver</a></td>
+          <td>Driving and Transport</td>
+          <td>Drivers of lorries, buses and goods vehicles</td>
+          <td>150 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Become a MOT tester</a></td>
+          <td>Driving and Transport</td>
+          <td>Driving and transport businesses</td>
+          <td>4 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Deposit protection schemes and landlords</a></td>
+          <td>Births, deaths, marraiges, and care</td>
+          <td>Being a landlord and renting out a room</td>
+          <td>25 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Park (mobile) homes</a></td>
+          <td>Births, deaths, marraiges, and care</td>
+          <td>Being a landlord and renting out a room</td>
+          <td>15 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Rent a room in your home</a></td>
+          <td>Housing and local services</td>
+          <td>Drivers of lorries, buses and goods vehicles</td>
+          <td>150 views</td>
+        </tr>
+        <tr>
+          <td><a href="#">Evicting tenants</a></td>
+          <td>Housing and local services</td>
+          <td>Driving and transport businesses</td>
+          <td>4 views</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

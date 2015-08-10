@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-family: $font-sans;
+	font-size: $base-font-size;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased; // for crisper text in webkit browsers
+}
+
+body {
+	position: absolute;
+	top: 0px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	min-width: $site-min-width;
+	background-color: $color-grey-50;
+}
+
+p {
+	font-size: $text-font-size;
+	line-height: $base-line-height;
+}
+
+
+ul, ol {
+	list-style-type: none;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: $color-link;
+	&:hover {
+		text-decoration: underline;
+	}
+}
