@@ -1,0 +1,202 @@
+.button {
+	@include transition(all ease-out .1s);
+	display: inline-block;
+	text-decoration: none;
+	background: $color-grey-100;
+	border: 1px solid $color-grey-300;
+	color: $color-grey-800;
+	font-family: $font-sans;
+	font-size: $small-font-size;
+	font-weight: 600;
+	border-radius: $border-radius;
+	padding: .3em .8em;
+	cursor: pointer;
+
+	&:hover {
+		@include transition-duration(0s);
+		border-color: $color-grey-300;
+		background-color: $color-grey-300;
+		text-decoration: none;
+	}
+
+	&:active, &.is-selected {
+		border-color: $color-grey-400;
+		background-color: $color-grey-400;
+	}
+
+	&:disabled {
+		opacity: .4;
+		cursor: default;
+	}
+
+	// removes blue outline in webkit
+	&:focus {
+		outline: none;
+	}
+}
+
+.button--blue {
+	border: 1px solid $color-blue-400;
+	background-color: $color-blue-300;
+	color: #fff;
+	&:hover {
+		border-color: $color-blue-500;
+		background-color: $color-blue-500;
+	}
+	&:active, &.is-selected {
+		border-color: $color-blue-700;
+		background-color: $color-blue-700;
+	}
+}
+
+.button--green {
+	border: 1px solid $color-green-400;
+	background-color: $color-green-300;
+	color: #fff;
+	&:hover {
+		border-color: $color-green-500;
+		background-color: $color-green-500;
+	}
+	&:active, &.is-selected {
+		border-color: $color-green-700;
+		background-color: $color-green-700;
+	}
+}
+
+.button--red {
+	color: $color-red-400;
+	&:hover {
+		color: $color-red-500;
+	}
+}
+
+.button--orange {
+	border: 1px solid $color-orange-400;
+	background-color: $color-orange-300;
+	color: #fff;
+	&:hover {
+		border-color: $color-orange-500;
+		background-color: $color-orange-500;
+	}
+	&:active, &.is-selected {
+		border-color: $color-orange-700;
+		background-color: $color-orange-700;
+	}
+}
+
+.button--text {
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 0;
+	&:hover, &:active, &.is-selected {
+		background-color: transparent;
+		border-color: transparent;
+		border-bottom: 1px solid #000;
+		color: #000;
+	}
+}
+
+.button--medium {
+	font-size: $base-font-size;
+	padding: .5em 1em;
+	font-weight: 600;
+}
+
+.button--large {
+	font-size: $h4-font-size;
+	padding: .5em 1em;
+	font-weight: 400;
+}
+
+
+.button--status {
+	padding: {
+		top: .3em;
+		bottom: .3em;
+	}
+	position: relative;
+	background-color: #fff;
+	z-index: 1;
+	width: 11em;
+	padding-left: 2em;
+	line-height: 1em;
+	&:after {
+		position: absolute;
+		content: '';
+		font-family: "FontAwesome";
+		z-index: 1;
+		left: .5em;
+		top: 50%;
+		margin-top: -.5em;
+	}
+	&:before {
+		background-color: $color-grey-200;
+		display: block;
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 0;
+		z-index: -1;
+	}
+	&.button--status--edited {
+		color: $color-grey-700;
+		&:after {
+			content: '\f040';
+		}
+		&:before {
+			width: 25%;
+		}
+		&:hover {
+			&:before {
+				display: none;
+			}
+		}
+	}
+	&.button--status--requested {
+		color: $color-orange-500;
+		&:after {
+			content: '\f06e';
+		}
+		&:before {
+			background-color: $color-orange-50;
+			width: 50%;
+		}
+		&:hover {
+			&:before {
+				display: none;
+			}
+		}
+	}
+	&.button--status--endorsed {
+		color: $color-green-500;
+		&:after {
+			content: '\f087';
+		}
+		&:before {
+			background-color: $color-green-50;
+			width: 75%;
+		}
+		&:hover {
+			&:before {
+				display: none;
+			}
+		}
+	}
+	&.button--status--published {
+		color: $color-blue-500;
+		&:after {
+			content: '\f00c';
+		}
+		&:before {
+			background-color: $color-blue-50;
+			width: 100%;
+		}
+		&:hover {
+			&:before {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="stylesheets/main.css" rel="stylesheet" />
+  <title>Chime</title>
+</head>
+<body class="{% block body_class %}{% endblock %} col">
+
+  <div class="global-header  row">
+    <div class="row__left">
+      <a href="index.html" class="global-header__title">Chime</a>
+      <nav class="breadcrumb">
+        <a href="browse.html" class="breadcrumb__item is-selected">Content</a>
+         <a href="activity.html" class="breadcrumb__item">Activity</a>
+        <a href="#" class="breadcrumb__item">Analytics</a>
+        <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+      </nav>
+    </div>
+    <nav class="global-header__nav  row__right  toolbar--right">
+      <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+    </nav>
+  </div>
+  <div class="activity-bar row row--main">
+    <p class="row__left">You are currently working in an unnamed activity (1 file changed so far).</p>
+    <a href="activity-overview.html" class="button button--orange button--medium row__right">Request feedback on this activity</a>
+  </div>
+  <div class="articles-list__header row row--main">
+    <ul class="nav-page-type toolbar toolbar--left row__left">
+      <li class="nav-page-type__link toolbar__item">Homepage</li>
+      <li class="nav-page-type__link toolbar__item is-selected">Articles</li>
+      <li class="nav-page-type__link toolbar__item">Project Pages</li>
+      <li class="nav-page-type__link toolbar__item">Department Pages</li>
+      <li class="nav-page-type__link toolbar__item">Press Releases</li>
+      <li class="nav-page-type__link toolbar__item">Job Postings</li>
+      <li class="nav-page-type__link toolbar__item">Events</li>
+    </ul>
+  </div>
+  <div class="articles-list__main grid col__flex">
+    <div class="dir grid__item width-one-fourth">
+      <h2>Topics</h2>
+      <p class="dir__description">appear on the homepage.</p>
+      <div class="selection-box box-add-file-folder">
+        <form action="." method="POST" class="form-one-line">
+          <input class="form-one-line__input" name="request_path" placeholder="Add Category" id="create-category-name" type="text" />
+          <input name="create_what" value="category" type="hidden" />
+          <input name="create_path" value="{{column['base_path']}}" type="hidden" />
+          <input class="form-one-line__submit button" name="action" type="submit" id="create-category-button" value="Create" />
+        </form>
+      </div>
+      <ul class="dir">
+       <li class="dir-item is-selected">
+        <a href="{{file['modify_path']}}" class="dir-item__action button"><span class="fa fa-pencil"></span></a>
+        <a class="dir-item__name" href="{{file['edit_path']}}"><span class="dir-item__display-type fa fa-folder"></span>Public Safety</a>
+      </li> 
+      <li class="dir-item">
+        <a href="{{file['modify_path']}}" class="dir-item__action button"><span class="fa fa-pencil"></span></a>
+        <a class="dir-item__name" href="{{file['edit_path']}}"><span class="dir-item__display-type fa fa-folder"></span>Births, marriages, deaths, and other life events</a>
+      </li> 
+    </ul>
+  </div>
+  <div class="dir grid__item width-one-fourth">
+    <h2>Subtopics</h2>
+    <p class="dir__description">group user needs together.</p>
+    <div class="selection-box box-add-file-folder">
+      <form action="." method="POST" class="form-one-line">
+        <input class="form-one-line__input" name="request_path" placeholder="Add Subcategory" id="create-subcategory-name" type="text" />
+        <input name="create_what" value="category" type="hidden" />
+        <input name="create_path" value="{{column['base_path']}}" type="hidden" />
+        <input class="form-one-line__submit button" name="action" type="submit" id="create-subcategory-button" value="Create" />
+      </form>
+    </div>
+    <ul class="dir">
+      <li class="dir-item is-selected">
+        <a href="{{file['modify_path']}}" class="dir-item__action button"><span class="fa fa-pencil"></span></a>
+        <a class="dir-item__name" href="{{file['edit_path']}}"><span class="dir-item__display-type fa fa-folder"></span>Emergency Services</a>
+      </li> 
+    </ul>
+  </div>
+  <div class="dir grid__item width-one-half end-row">
+    <h2>Articles</h2>
+    <p class="dir__description">should address a specific user need.</p>
+    <div class="selection-box box-add-file-folder">
+      <form action="." method="POST" class="form-one-line">
+        <input class="form-one-line__input" name="request_path" placeholder="Add Article" id="create-article-name" type="text" />
+        <input name="create_what" value="article" type="hidden" />
+        <input name="create_path" value="{{column['base_path']}}" type="hidden" />
+        <input class="form-one-line__submit button" name="action" type="submit" id="create-article-button" value="Create" />
+      </form>
+    </div>
+    <ul class="dir">
+     <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+        <button name="action" type="submit" value="delete" class="dir-item__action button dir-item__action--delete"><span class="fa fa-trash"></span></button>
+      </form>
+      <a class="dir-item__name" href="edit.html"><span class="dir-item__display-type fa fa-file-text"></span>Snowstorm Operations</a>
+      <div class="dir-item__status toolbar--right">
+      </div>
+    </li> 
+    <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+        <button name="action" type="submit" value="delete" class="dir-item__action button dir-item__action--delete"><span class="fa fa-trash"></span></button>
+      </form>
+      <a class="dir-item__name" href="edit_conflict.html"><span class="dir-item__display-type fa fa-file-text"></span>Hurricanes</a>
+      <div class="dir-item__status toolbar--right">
+        <a href="#" class="button button--status button--status--edited">edits in progress</a>
+      </div>
+    </li> 
+    <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+        <button name="action" type="submit" value="delete" class="dir-item__action button dir-item__action--delete"><span class="fa fa-trash"></span></button>
+      </form>
+      <a class="dir-item__name" href="edit.html"><span class="dir-item__display-type fa fa-file-text"></span>Drought</a>
+      <div class="dir-item__status toolbar--right">
+        <a href="#" class="button button--status button--status--edited">edits in progress</a>
+      </div>
+    </li> 
+    <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+        <button name="action" type="submit" value="delete" class="dir-item__action button dir-item__action--delete"><span class="fa fa-trash"></span></button>
+      </form>
+      <a class="dir-item__name" href="edit.html"><span class="dir-item__display-type fa fa-file-text"></span>Tsunamis</a>
+      <div class="dir-item__status toolbar--right">
+
+      </div>
+    </li> 
+  </ul>
+</div>
+</div>
+
+
+</body>
+</html>

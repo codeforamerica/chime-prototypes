@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+        <link href="stylesheets/main.css" rel="stylesheet" />
+        <title>Chime</title>
+    </head>
+    <body class="{% block body_class %}{% endblock %} col">
+
+      <div class="global-header  row">
+        <div class="row__left">
+          <a href="index.html" class="global-header__title">Chime</a>
+          <nav class="breadcrumb">
+              <a href="browse.html" class="breadcrumb__item is-selected">Content</a>
+               <a href="activity.html" class="breadcrumb__item">Activity</a>
+              <a href="#" class="breadcrumb__item">Analytics</a>
+               <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+          </nav>
+        </div>
+        <nav class="global-header__nav  row__right  toolbar--right">
+            <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+        </nav>
+      </div>
+      <div class="articles-list__header row row--main">
+        <ul class="nav-page-type toolbar toolbar--left row__left">
+          <li class="nav-page-type__link toolbar__item">Homepage</li>
+          <li class="nav-page-type__link toolbar__item">Articles</li>
+          <li class="nav-page-type__link toolbar__item">Project Pages</li>
+          <li class="nav-page-type__link toolbar__item">Department Pages</li>
+          <li class="nav-page-type__link toolbar__item">Press Releases</li>
+          <li class="nav-page-type__link toolbar__item">Job Postings</li>
+          <li class="nav-page-type__link toolbar__item">Events</li>
+          <li class="nav-page-type__link toolbar__item is-selected">Image Library</li>
+        </ul>
+      </div>
+      <div class="image-uploader">
+        <form action="">
+          <label>
+            <input type="file">
+            Upload a new image
+          </label>
+        </form>
+      </div>
+      <div class="media-library col__flex">
+        <div class="media-library__browser col">
+          <div class="media-library__browser-actions row col__item">
+            <div class="row__left">
+              <input type="search" placeholder="Filter images">
+            </div>
+            
+            <div class="row__right toolbar toolbar--right">
+              <a href="#" class="button button--green button--medium">Upload an image</a>
+            </div>
+          </div>
+          <div class="media-library__image-list col__flex">
+            <ul>
+              <li class="media-library__image is-selected"><img src="http://placehold.it/250x250" alt="asdf"></li>
+              <li class="media-library__image"><img src="http://placehold.it/350x250" alt="asdf"></li>
+              <li class="media-library__image"><img src="http://placehold.it/250x150" alt="asdf"></li>
+              <li class="media-library__image"><img src="http://placehold.it/650x350" alt="asdf"></li>
+              <li class="media-library__image"><img src="http://placehold.it/150x550" alt="asdf"></li>
+              <li class="media-library__image"><img src="http://placehold.it/250x250" alt="asdf"></li>
+              <li class="media-library__image"><img src="http://placehold.it/250x250" alt="asdf"></li>
+              <li class="media-library__image"><img src="http://placehold.it/250x250" alt="asdf"></li>
+              <li class="media-library__image"><img src="http://placehold.it/250x250" alt="asdf"></li>
+            </ul>
+          </div>
+          <div class="media-library__page-nav toolbar">
+            <a href="" class="button toolbar__item">1</a>
+            <a href="" class="button toolbar__item">2</a>
+            <a href="" class="button toolbar__item">3</a>
+          </div>
+        </div>
+        <div class="media-library__preview">
+          <h2>Image Details</h2>
+          <div class="media-library__preview-thumb">
+            <img src="http://placehold.it/250x250" alt="asdf">
+          </div>
+          <label for="">Caption/Alt Text</label>
+          <input type="text" value="This is a placeholder image">
+          <label for="">Markdown Snippet</label>
+          <div class="media-library__preview-snippet">![http://placehold.it/250x250](This is a placeholder image)</div>
+          <div class="media-library__preview-actions row">
+            <div class="row__left">
+              <a href="" class="text-red">Delete</a>
+            </div>
+            <div class="row__right toolbar toolbar--right">
+              <a href="#" class="button button--green button--medium">Save</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
