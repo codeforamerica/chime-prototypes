@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="stylesheets/main.css" rel="stylesheet" />
+  <title>Chime</title>
+</head>
+<body class="{% block body_class %}{% endblock %} col">
+
+  <div class="global-header  row">
+    <div class="row__left">
+      <a href="index.html" class="global-header__title">Chime</a>
+      <nav class="breadcrumb">
+        <a href="browse.html" class="breadcrumb__item is-selected">Content</a>
+         <a href="activity.html" class="breadcrumb__item">Activity</a>
+        <a href="#" class="breadcrumb__item">Analytics</a>
+        <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+      </nav>
+    </div>
+    <nav class="global-header__nav  row__right  toolbar--right">
+
+      <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+    </nav>
+  </div>
+  <div class="articles-list__header row row--main">
+    <ul class="nav-page-type toolbar toolbar--left row__left">
+      <li class="nav-page-type__link toolbar__item">Homepage</li>
+      <li class="nav-page-type__link toolbar__item is-selected">Articles</li>
+      <li class="nav-page-type__link toolbar__item">Project Pages</li>
+      <li class="nav-page-type__link toolbar__item">Department Pages</li>
+      <li class="nav-page-type__link toolbar__item">Press Releases</li>
+      <li class="nav-page-type__link toolbar__item">Job Postings</li>
+      <li class="nav-page-type__link toolbar__item">Events</li>
+    </ul>
+    <div class="articles-list__toolbar row__right toolbar toolbar--right">
+      <a href="browse-edit.html" class="button button--green">Edit Articles Structure</a>
+    </div>
+  </div>
+  <div class="articles-list__main grid col__flex ">
+    <div class="dir grid__item width-one-fourth">
+      <h2 class="dir__title">Topics <span class="fa fa-folder"></span></h2>
+      <p class="dir__description">appear on the homepage.</p>
+      <ul class="dir">
+       <li class="dir-item is-selected">
+        <a class="dir-item__name" href="{{file['edit_path']}}">Public Safety</a>
+        <div class="dir-item__status toolbar--right">
+          <div class="toolbar__item badge badge--requested">1</div>
+          <div class="toolbar__item badge badge--endorsed">1</div>
+        </div>
+      </li> 
+      <li class="dir-item">
+        <a class="dir-item__name" href="{{file['edit_path']}}">Births, marriages, deaths, and other life events</a>
+        <div class="dir-item__status toolbar--right">
+          <div class="badge badge--requested">2</div>
+        </div>
+      </li> 
+    </ul>
+  </div>
+  <div class="dir grid__item width-one-fourth">
+    <h2 class="dir__title">Subtopics <span class="fa fa-folder"></span></h2>
+    <p class="dir__description">group user needs together.</p>
+    <ul class="dir">
+      <li class="dir-item is-selected">
+        <a class="dir-item__name" href="{{file['edit_path']}}">Emergency Services</a>
+        <div class="dir-item__status toolbar--right">
+          <div class="toolbar__item badge badge--requested">1</div>
+          <div class="toolbar__item badge badge--endorsed">1</div>
+        </div>
+      </li> 
+    </ul>
+  </div>
+  <div class="dir dir--articles grid__item width-one-half end-row">
+    <h2 class="dir__title">Articles <span class="fa fa-file-text"></span></h2>
+    <p class="dir__description">should address a specific user need.</p>
+    <ul class="dir">
+     <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+      </form>
+      <a class="dir-item__name" href="edit.html">Snowstorm Operations</a>
+      <div class="dir-item__status toolbar--right">
+      </div>
+    </li> 
+    <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+      </form>
+      <a class="dir-item__name" href="edit.html">Hurricanes</a>
+      <div class="dir-item__status toolbar--right">
+        <a href="#" class="button button--status button--status--requested">feedback needed</a>
+      </div>
+    </li> 
+    <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+      </form>
+      <a class="dir-item__name" href="edit.html">Drought</a>
+      <div class="dir-item__status toolbar--right">
+        <a href="#" class="button button--status button--status--endorsed">edits endorsed</a>
+      </div>
+    </li> 
+    <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+      </form>
+      <a class="dir-item__name" href="edit.html">Tsunamis</a>
+      <div class="dir-item__status toolbar--right">
+
+      </div>
+    </li> 
+  </ul>
+</div>
+</div>
+
+
+</body>
+</html>

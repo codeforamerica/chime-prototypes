@@ -1,0 +1,148 @@
+.button {
+	@include transition(all ease-out .1s);
+	display: inline-block;
+	text-decoration: none;
+	background: $color-grey-100;
+	border: 1px solid $color-grey-300;
+	color: $color-grey-700;
+	font-family: $font-sans;
+	font-size: $base-font-size;
+	font-weight: 400;
+	border-radius: $border-radius;
+	padding: .1em .6em;
+	position: relative;
+
+	&:hover {
+		@include transition-duration(0s);
+		border-color: $color-grey-300;
+		background-color: $color-grey-300;
+		text-decoration: none;
+	}
+
+	&:active, &.is-selected {
+		border-color: $color-grey-400;
+		background-color: $color-grey-400;
+	}
+
+	&:disabled {
+		border-color: $color-grey-200;
+		background-color: $color-grey-100;
+		cursor: default;
+		color: $color-grey-500;
+	}
+
+	&.is-loading {
+		@include transition-duration(.1s);
+		padding-right: .5em;
+		&:after {
+			@include animation(spinner 1s infinite steps(8));
+			display: inline-block;
+			margin-left: .5em;
+			content: '\f110';
+			font: normal normal normal 14px/1 FontAwesome;
+			margin-top: .1em;
+		}
+	}
+
+	// removes blue outline in webkit
+	&:focus {
+		outline: none;
+	}
+}
+
+.button--blue {
+	border: 1px solid $color-blue-400;
+	background-color: $color-blue-300;
+	color: #fff;
+	&:hover {
+		border-color: $color-blue-500;
+		background-color: $color-blue-500;
+	}
+	&:active, &.is-selected {
+		border-color: $color-blue-700;
+		background-color: $color-blue-700;
+	}
+	&:disabled {
+		border-color: $color-blue-300;
+		background-color: $color-blue-200;
+	}
+}
+
+.button--green {
+	border: 1px solid $color-green-400;
+	background-color: $color-green-300;
+	color: #fff;
+	&:hover {
+		border-color: $color-green-500;
+		background-color: $color-green-500;
+	}
+	&:active, &.is-selected {
+		border-color: $color-green-700;
+		background-color: $color-green-700;
+	}
+	&:disabled {
+		border-color: $color-green-300;
+		background-color: $color-green-200;
+	}
+}
+
+.button--red {
+	color: $color-red-400;
+	&:hover {
+		color: $color-red-500;
+	}
+}
+
+.button--orange {
+	border: 1px solid $color-orange-400;
+	background-color: $color-orange-300;
+	color: #fff;
+	&:hover {
+		border-color: $color-orange-500;
+		background-color: $color-orange-500;
+	}
+	&:active, &.is-selected {
+		border-color: $color-orange-700;
+		background-color: $color-orange-700;
+	}
+	&:disabled {
+		border-color: $color-orange-300;
+		background-color: $color-orange-200;
+	}
+}
+
+.button--text {
+	background-color: transparent;
+	border: 1px solid transparent;
+	border-radius: 0;
+	&:hover, &:active, &.is-selected {
+		background-color: transparent;
+		border-color: transparent;
+		border-bottom: 1px solid #000;
+		color: #000;
+	}
+}
+
+.button--medium {
+	font-size: $base-font-size;
+	padding: .5em 1em;
+	font-weight: 400;
+	&.is-loading {
+		padding-right: 1em;
+		&:after {
+			margin-top: 0;
+		}
+	}
+}
+
+.button--large {
+	font-size: $h4-font-size;
+	padding: .5em 1em;
+	font-weight: 400;
+	&.is-loading {
+		padding-right: 1em;
+		&:after {
+			margin-top: 0;
+		}
+	}
+}

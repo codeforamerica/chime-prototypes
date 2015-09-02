@@ -1,0 +1,141 @@
+.articles-list__header {
+	background-color: #fff;
+	border-bottom: 1px solid $color-grey-300;
+	padding: {
+		top: 0em;
+		bottom: 0em;
+	}
+}
+
+.articles-list__description {
+	margin-bottom: 0;
+}
+
+.nav-page-type {
+	@include clearfix();
+	margin-top: .5em;
+	margin-bottom: -1px;
+}
+
+.nav-page-type__link {
+	font-size: $text-font-size;
+	padding: .5em .7em .7em .7em;
+	margin: 0;
+	&.is-selected {
+		font-weight: bold;
+		border: 1px solid $color-grey-300;
+		background-color: $color-grey-50;
+		border-bottom: 0;
+	}
+	&:hover {
+		color: $color-blue-500;
+		cursor: pointer;
+		background-color: #fff;
+		border-bottom: 0;
+	}
+}
+
+.articles-list__main {
+	@include stretch-content();
+	@include clearfix();
+}
+
+.dir.grid__item {
+	border-right: 1px solid $color-grey-300;
+	padding: 1em $site-margins;
+}
+
+.dir__description {
+	font-size: $base-font-size;
+}
+
+.dir__placeholder-text {
+	margin-top: 4em;
+	color: $color-grey-500;
+	font-size: $h4-font-size;
+}
+
+
+.box-add-file-folder {
+	padding-bottom: 2em;
+	border-bottom: 4px solid $color-grey-300;
+	margin-bottom: 2em;
+	margin: {
+		left: -.5em;
+		right: -.5em;
+	}
+
+	input[type="text"] {
+		font-size: $base-font-size;
+	}
+}
+
+
+.dir-item {
+	position: relative;
+	padding: .75em 1em;
+	padding-left: 3em;
+	font-size: $text-font-size;
+	margin: {
+		left: -.5em;
+		right: -.5em;
+	}
+	&:not(:last-child) {
+		border-bottom: 1px solid $color-grey-300;
+	}
+	
+
+	&:hover {
+		background-color: $color-grey-200;
+		.dir-item__action {
+			display: block;
+		}
+		
+	}
+
+	&.is-selected {
+		background-color: $color-grey-200;
+		.dir-item__name {
+			font-weight: 600;
+			color: #000;
+		}
+	}
+}
+
+.dir-item__display-type {
+	position: absolute;
+	top: .9em;
+	left: 1em;
+}
+
+.dir-item__name {
+	color: $color-grey-700;
+	font-weight: 400;
+	display: block;
+	width: auto;
+	margin-right: 3em;
+}
+
+.dir-item__action {
+	display: none;
+	position: absolute;
+	top: .8em;
+	left: .8em;
+	z-index: 2;
+	padding: .2em .4em;
+	background-color: $color-grey-50;
+	&:hover {
+		background-color: #fff;
+	}
+}
+
+.dir-item__action--delete {
+	color: $color-red-400;
+	&:hover {
+		color: $color-red-600;
+	}
+}
+
+.articles {
+	padding: 1em $site-margins;
+}

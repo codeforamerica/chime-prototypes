@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 10]><html lang="en-us" class="lt-ie10"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en-us"><!--<![endif]-->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="stylesheets/main.css" rel="stylesheet" />
+  <title>Chime</title>
+</head>
+<body class="{% block body_class %}{% endblock %} col">
+
+  <div class="global-header  row">
+    <div class="row__left">
+      <a href="index.html" class="global-header__title">Chime</a>
+      <nav class="breadcrumb">
+        <a href="browse.html" class="breadcrumb__item is-selected">Content</a>
+         <a href="activity.html" class="breadcrumb__item">Activity</a>
+        <a href="#" class="breadcrumb__item">Analytics</a>
+        <a href="#" class="breadcrumb__item">Team</a>
+        <a href="#" class="breadcrumb__item">Live Site</a>
+      </nav>
+    </div>
+    <nav class="global-header__nav  row__right  toolbar--right">
+      <a class="toolbar__item global-header__link" href="#" id="signout">Sign Out</a>
+    </nav>
+  </div>
+  <div class="articles-list__header row row--main">
+    <ul class="nav-page-type toolbar toolbar--left row__left">
+      <li class="nav-page-type__link toolbar__item">Homepage</li>
+      <li class="nav-page-type__link toolbar__item is-selected">Articles</li>
+      <li class="nav-page-type__link toolbar__item">Project Pages</li>
+      <li class="nav-page-type__link toolbar__item">Department Pages</li>
+      <li class="nav-page-type__link toolbar__item">Press Releases</li>
+      <li class="nav-page-type__link toolbar__item">Job Postings</li>
+      <li class="nav-page-type__link toolbar__item">Events</li>
+    </ul>
+    <div class="articles-list__toolbar row__right toolbar toolbar--right">
+      <a href="browse.html" class="button button--green">Save Changes</a>
+    </div>
+  </div>
+  <div class="browse-edit-description row row--main">
+    <p>Use this view edit the structure of your article content. You can add, remove, reorder, or edit topics and subtopics. You can also reorder, add, or remove articles.</p>
+  </div>
+  <div class="articles-list__main grid col__flex is-editing">
+    <div class="dir grid__item width-one-fourth">
+      <h2 class="dir__title">Topics  <span class="fa fa-folder"></span></h2>
+      <p class="dir__description">appear on the homepage.</p>
+      <a href="#" class="dir-new-item">Add a topic</a>
+      <ul class="dir">
+       <li class="dir-item is-selected">
+        <a href="{{file['modify_path']}}" class="dir-item__action button"><span class="fa fa-pencil"></span></a>
+        <a class="dir-item__name" href="{{file['edit_path']}}"><span class="dir-item__display-type fa fa-reorder"></span>Public Safety</a>
+      </li> 
+      <li class="dir-item">
+        <a href="{{file['modify_path']}}" class="dir-item__action button"><span class="fa fa-pencil"></span></a>
+        <a class="dir-item__name" href="{{file['edit_path']}}"><span class="dir-item__display-type fa fa-reorder"></span>Births, marriages, deaths, and other life events</a>
+      </li> 
+    </ul>
+  </div>
+  <div class="dir grid__item width-one-fourth">
+    <h2 class="dir__title">Subtopics  <span class="fa fa-folder"></span></h2>
+    <p class="dir__description">group user needs together.</p>
+    <a href="#" class="dir-new-item">Add a subtopic</a>
+    <ul class="dir">
+      <li class="dir-item is-selected">
+        <a href="{{file['modify_path']}}" class="dir-item__action button"><span class="fa fa-pencil"></span></a>
+        <a class="dir-item__name" href="{{file['edit_path']}}"><span class="dir-item__display-type fa fa-reorder"></span>Emergency Services</a>
+      </li> 
+    </ul>
+  </div>
+  <div class="dir dir--articles grid__item width-one-half end-row">
+    <h2 class="dir__title">Articles  <span class="fa fa-file-text"></span></h2>
+    <p class="dir__description">should address a specific user need.</p>
+     <a href="#" class="dir-new-item">Add an article</a>
+    <ul class="dir">
+     <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+        <button name="action" type="submit" value="delete" class="dir-item__action button dir-item__action--delete"><span class="fa fa-trash"></span></button>
+      </form>
+      <a class="dir-item__name" href="edit.html"><span class="dir-item__display-type fa fa-reorder"></span>Snowstorm Operations</a>
+      <div class="dir-item__status toolbar--right">
+      </div>
+    </li> 
+    <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+        <button name="action" type="submit" value="delete" class="dir-item__action button dir-item__action--delete"><span class="fa fa-trash"></span></button>
+      </form>
+      <a class="dir-item__name" href="edit.html"><span class="dir-item__display-type fa fa-reorder"></span>Hurricanes</a>
+    </li> 
+    <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+        <button name="action" type="submit" value="delete" class="dir-item__action button dir-item__action--delete"><span class="fa fa-trash"></span></button>
+      </form>
+      <a class="dir-item__name" href="edit.html"><span class="dir-item__display-type fa fa-reorder"></span>Drought</a>
+    </li> 
+    <li class="dir-item">
+      <form action="." method="POST" class="toolbar__item">
+        <input name="request_path" value="{{file['file_path']}}" type="hidden">
+        <button name="action" type="submit" value="delete" class="dir-item__action button dir-item__action--delete"><span class="fa fa-trash"></span></button>
+      </form>
+      <a class="dir-item__name" href="edit.html"><span class="dir-item__display-type fa fa-reorder"></span>Tsunamis</a>
+      <div class="dir-item__status toolbar--right">
+
+      </div>
+    </li> 
+  </ul>
+</div>
+</div>
+<div class="modal-container">
+  <div class="modal directory-modify__form">
+    <form action="." method="POST">
+        <input name="layout" value="{{ category.layout }}" type="hidden" />
+        <input name="hexsha" value="{{ hexsha }}" type="hidden" />
+        <input name="url-slug" type="hidden" value="{{ url_slug }}" />
+        <input name="order" type="hidden" value="{{ category.order }}" />
+        <h3 class="directory-modify__title">Subtopic Details</h3>
+        <label>Subtopic Name</label>
+        <input name="{{ iso }}-title" type="text" value="" class="directory-modify__name" placeholder="Crime Statistics and Maps">
+        <label>Subtopic Description</label>
+        <textarea name="{{ iso }}-description" class="directory-modify__description" placeholder="Crime statistics and reports by district and map"></textarea>
+        <div class="directory-modify__action-bar row">
+          <div class="row__left toolbar toolbar--left">
+          </div>
+          <div class="row__right toolbar toolbar--right">
+            <a href="{{ category.edit_path }}" class="button toolbar__item">Cancel</a>
+            <button name="save" type="submit" class="button button--green toolbar__item">Save</button>
+          </div>
+
+        </div>
+    </form>
+  </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/javascript/sortable.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $(".dir").each(function(index, dirList) {
+      Sortable.create($(dirList).get(0),  {
+        draggable: ".dir-item",
+        onUpdate: function(e) {
+          console.log(e);
+        },
+        onStart: function(e) {
+          $(e.srcElement).addClass('is-reordering');
+        },
+        onEnd: function(e) {
+          $(e.srcElement).removeClass('is-reordering');
+        }
+      });
+    });
+    $('.dir-new-item').click(function(e) {
+      $('.modal-container').addClass('is-open');
+    })
+    $('button[name="save"]').click(function(e) {
+      e.preventDefault();
+      $('.modal-container').removeClass('is-open');
+    })
+  })
+</script>
+</body>
+</html>
