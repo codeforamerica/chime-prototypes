@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="browse-edit-description row row--main">
-    <p>Use this view edit the structure of your article content. You can add, remove, reorder, or edit topics and subtopics. You can also reorder, add, or remove articles.</p>
+    <p>Use this view edit the structure of your article content. You can add, remove, sort, or edit topics and subtopics. You can also sort, add, or remove articles.</p>
   </div>
   <div class="articles-list__main grid col__flex is-editing">
     <div class="dir grid__item width-one-fourth">
@@ -143,15 +143,7 @@
     $(".dir").each(function(index, dirList) {
       Sortable.create($(dirList).get(0),  {
         draggable: ".dir-item",
-        onUpdate: function(e) {
-          console.log(e);
-        },
-        onStart: function(e) {
-          $(e.srcElement).addClass('is-reordering');
-        },
-        onEnd: function(e) {
-          $(e.srcElement).removeClass('is-reordering');
-        }
+        animation: 150
       });
     });
     $('.dir-new-item').click(function(e) {

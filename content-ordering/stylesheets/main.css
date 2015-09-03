@@ -2943,32 +2943,45 @@ select {
 /* line 279, ../sass/templates/_prototype.scss */
 .dir-item {
   padding-left: 1em;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  margin-top: -1px;
 }
-/* line 281, ../sass/templates/_prototype.scss */
+/* line 284, ../sass/templates/_prototype.scss */
 .is-editing .dir-item {
   padding-left: 3em;
 }
-/* line 285, ../sass/templates/_prototype.scss */
-.dir-item .fa-reorder:hover {
+/* line 287, ../sass/templates/_prototype.scss */
+.dir-item .fa-reorder {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
 }
-/* line 289, ../sass/templates/_prototype.scss */
-.is-reordering .dir-item {
-  opacity: .7;
+/* line 293, ../sass/templates/_prototype.scss */
+.dir-item .fa-reorder:active {
+  cursor: move;
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
 }
-/* line 291, ../sass/templates/_prototype.scss */
-.is-reordering .dir-item.sortable-ghost {
-  opacity: 1;
+/* line 301, ../sass/templates/_prototype.scss */
+.dir-item.sortable-ghost {
+  opacity: 0;
 }
 
-/* line 297, ../sass/templates/_prototype.scss */
+/* line 306, ../sass/templates/_prototype.scss */
 .dir-item__action {
   right: 1em;
   left: auto;
   display: block;
 }
 
-/* line 303, ../sass/templates/_prototype.scss */
+/* line 312, ../sass/templates/_prototype.scss */
 .dir-new-item {
   display: block;
   font-weight: 400;
@@ -2976,10 +2989,9 @@ select {
   padding-left: 2em;
   font-size: 16px;
   padding: 1em 2em;
-  border-bottom: 1px solid #e0e0e0;
   line-height: 1em;
 }
-/* line 312, ../sass/templates/_prototype.scss */
+/* line 320, ../sass/templates/_prototype.scss */
 .dir-new-item:before {
   font-family: 'FontAwesome';
   content: '\f067';
@@ -2988,16 +3000,18 @@ select {
   top: 1em;
 }
 
-/* line 321, ../sass/templates/_prototype.scss */
+/* line 329, ../sass/templates/_prototype.scss */
 .directory-modify__form {
   position: static;
 }
 
-/* line 325, ../sass/templates/_prototype.scss */
+/* line 333, ../sass/templates/_prototype.scss */
 .browse-edit-description {
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #424242;
+  color: #fff;
 }
-/* line 328, ../sass/templates/_prototype.scss */
+/* line 336, ../sass/templates/_prototype.scss */
 .browse-edit-description p {
+  font-weight: 400;
   margin: 0;
 }

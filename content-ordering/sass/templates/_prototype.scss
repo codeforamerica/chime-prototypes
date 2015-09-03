@@ -278,19 +278,28 @@ select {
 
 .dir-item {
 	padding-left: 1em;
+	border-bottom: 1px solid $color-grey-300;
+	border-top: 1px solid $color-grey-300;
+	margin-top: -1px;
 	.is-editing & {
 		padding-left: 3em;
 	}
 	.fa-reorder {
-		&:hover {
+		@include user-select(none);
+		cursor: move;
+		cursor: grab;
+		cursor: -moz-grab;
+		cursor: -webkit-grab;
+		&:active {
 			cursor: move;
+			cursor: grabbing;
+			cursor: -moz-grabbing;
+			cursor: -webkit-grabbing;
 		}
+
 	}
-	.is-reordering & {
-		opacity: .7;
-		&.sortable-ghost {
-			opacity: 1;
-		}
+	&.sortable-ghost {
+		opacity: 0;
 	}
 }
 
@@ -307,7 +316,6 @@ select {
 	padding-left: 2em;
 	font-size: $text-font-size;
 	padding: 1em 2em;
-	border-bottom: 1px solid $color-grey-300;
 	line-height: 1em;
 	&:before {
 		font-family: 'FontAwesome';
@@ -323,9 +331,10 @@ select {
 }
 
 .browse-edit-description {
-
-	border-bottom: 1px solid $color-grey-300;
+	background-color: $color-grey-800;
+	color: #fff;
 	p {
+		font-weight: 400;
 		margin: 0;
 	}
 }
